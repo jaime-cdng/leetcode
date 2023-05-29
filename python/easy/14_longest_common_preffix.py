@@ -6,7 +6,7 @@ If there is no common prefix, return an empty string "".
 
 
 class SuboptimalSolution(object):
-    def longestCommonPrefix(self, str_list):
+    def longestCommonPrefix(self, str_list: list[str]):
         """
         :type str_list: List[str]
         :rtype: str
@@ -15,7 +15,7 @@ class SuboptimalSolution(object):
         if not str_list:
             return ""
 
-        common_prefix = min(str_list, key=len)
+        common_prefix: str = min(str_list, key=len)
 
         while len(common_prefix) > 0:
             for string in str_list:
@@ -39,7 +39,7 @@ class Solution(object):
         if not str_list:
             return ""
 
-        common_prefix = min(str_list, key=len)
+        common_prefix: str = min(str_list, key=len)
 
         for i in range(len(common_prefix)):
             if any(string[i] != common_prefix[i] for string in str_list):
@@ -49,7 +49,7 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    solution = Solution()
+    solution = SuboptimalSolution()
     strs = ["a"]
     s = solution.longestCommonPrefix(strs)
     print(s)
