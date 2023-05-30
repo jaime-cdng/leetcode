@@ -50,6 +50,23 @@ class Solution(object):
         return common_prefix
 
 
+class AlternativeSolution(object):
+    def longestCommonPrefix(self, str_list):
+        if not str_list:
+            return ""
+
+        str_list.sort()
+
+        first_str = str_list[0]
+        last_str = str_list[-1]
+
+        index = 0
+        while index < len(first_str) and first_str[index] == last_str[index]:
+            index += 1
+
+        return first_str[:index]
+
+
 if __name__ == "__main__":
     solution = SuboptimalSolution()
     strs = ["a"]
