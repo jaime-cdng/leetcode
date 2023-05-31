@@ -29,15 +29,16 @@ class Solution(object):
             "]": "["
         }
 
-        lifo = []
+        stack = []
+
         for char in string:
             if char in closing_opening.values():
-                lifo.append(char)
+                stack.append(char)
             elif char in closing_opening.keys():
-                if len(lifo) == 0 or lifo.pop() != closing_opening[char]:
+                if len(stack) == 0 or stack.pop() != closing_opening[char]:
                     return False
 
-        return len(lifo) == 0
+        return len(stack) == 0
 
 
 if __name__ == "__main__":

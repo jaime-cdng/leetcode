@@ -25,6 +25,7 @@ class Solution(object):
         """
 
         values = []
+
         while list1 is not None:
             values.append(list1.val)
             list1 = list1.next
